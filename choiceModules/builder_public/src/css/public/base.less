@@ -1,0 +1,81 @@
+/*   主色系   */
+@baseColorDeep2: #6895bb;   //主色调 深+2 设置弹窗tab切换背景色
+@baseColorDeep1: #2882ca;   //主色调 深+1 主色hover按钮颜色
+@baseColor: #3089d5;        //主色调 原色 页面主体色
+@baseColorLight1: #6eace2;  //主色调 浅+1 rgba(48,137,213,.7)下拉菜单hover颜色
+@baseColorLight2: #83b8e6;  //主色调 浅+2 rgba(48,137,213,.6) 删除按钮hover颜色
+@baseColorLight3: #97c4ea;  //主色调 浅+3 rgba(48,137,213,.5) 文本框获取焦点颜色,删除按钮原色
+@baseColorLight4: #d6e7f7;  //主色调 浅+4 rgba(48,137,213,.2) 菜单hover颜色1,功能按钮滑过颜色
+@baseColorLight5: #eaf3fb;  //主色调 浅+5 rgba(48,137,213,.1) 菜单和over颜色2,li横条背景色,滚动条背景色
+
+/*  主色透明*/
+@baseOpa1: rgba(48,137,213,.1); //主色 + 10%透明度
+@baseOpa2: rgba(48,137,213,.2); //主色 + 20%透明度
+@baseOpa3: rgba(48,137,213,.3); //主色 + 30%透明度
+@baseOpa4: rgba(48,137,213,.4); //主色 + 40%透明度
+@baseOpa5: rgba(48,137,213,.5); //主色 + 50%透明度
+@baseOpa6: rgba(48,137,213,.6); //主色 + 60%透明度
+@baseOpa7: rgba(48,137,213,.7); //主色 + 70%透明度
+@baseOpa8: rgba(48,137,213,.8); //主色 + 80%透明度
+@baseOpa9: rgba(48,137,213,.9); //主色 + 90%透明度
+
+/*   常用基础色   */
+@black: #000;     //纯黑色
+@white: #fff;     //纯白色
+
+@fontColor: #0e293f;    //字体颜色
+
+@gray1: #949494;  //灰色提示文字
+@gray2: #c9c9c9;  //文字置灰不可用
+@gray3: #d7d7d7;  //禁止按钮,关闭按钮,初始input框及图标,分割线颜色(常用色)
+@gray4: #f2f2f2;  //浅灰背景,
+@gray5: #e4e4e4;  //分割线2
+@gray6: #ccc;     //下拉菜单阴影
+
+@attention: #f90; //注意提示颜色
+@opa0: rgba(0,0,0,0); //透明
+
+@blackOpa1: rgba(0,0,0,.1);
+@blackOpa2: rgba(0,0,0,.2);
+@blackOpa3: rgba(0,0,0,.3);
+@blackOpa4: rgba(0,0,0,.4);
+@blackOpa5: rgba(0,0,0,.5);
+@blackOpa6: rgba(0,0,0,.6);
+@blackOpa7: rgba(0,0,0,.7);
+@blackOpa8: rgba(0,0,0,.8);
+@blackOpa9: rgba(0,0,0,.9);
+@whiteOpa1: rgba(255,255,255,.1);
+@whiteOpa2: rgba(255,255,255,.2);
+@whiteOpa3: rgba(255,255,255,.3);
+@whiteOpa4: rgba(255,255,255,.4);
+@whiteOpa5: rgba(255,255,255,.5);
+@whiteOpa6: rgba(255,255,255,.6);
+@whiteOpa7: rgba(255,255,255,.7);
+@whiteOpa8: rgba(255,255,255,.8);
+@whiteOpa9: rgba(255,255,255,.9);
+
+@boxShadow: 0 0 5px #ccc;
+@ellipseBoxShadow: rgba(25,25,25,.3);
+@lg: linear-gradient(#fff,#e4e4e4); //渐变背景
+@red: #f00;
+@f60: #f60;
+@fdc: #ffd1c2;
+
+
+//兼容写法
+.boxShadow(@x: 0,@y: 0,@b: 5px,@c: @gray6) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -o-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.transition(@a: all,@b: 0.5s,@y: ease,@d: 0s){
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+
+

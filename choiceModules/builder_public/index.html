@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>族蚂7-1弹窗</title>
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover, a:visited, a:link, a:active {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <p>正在访问public...</p>
+    <!--<p>域名访问：</p>
+    <p>http://public.zuma.com/choiceModules/builder_public/src/html/index.html?type=radio</p>
+    <p>ip访问：</p>
+    <p>http://192.168.0.39:8787/choiceModules/builder_public/src/html/index.html?type=radio</p>
+    <p>访问参数type：</p>-->
+    <!--<p>
+        <span onclick="choiceFileModules.choiceModules({modules: 'picture'})">picture</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'radio'})">radio</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'video'})">video</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'album'})">album</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'file'})">file</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'blogger'})">blogger</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'news'})">news</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'service'})">service</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'goods'})">goods</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'composer'})">composer</span>
+    </p>-->
+    <p>
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=picture&multiple=false&m=图片">picture</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=radio&multiple=false&m=音频">radio</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=video&multiple=false&m=视频">video</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=album&multiple=false&m=专辑">album</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=file&multiple=false&m=文件">file</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=blogger&multiple=false&m=博客">blogger</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=news&multiple=false&m=新闻">news</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=service&multiple=false&m=服务">service</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=goods&multiple=false&m=产品">goods</a>、
+        <a href="http://public.zuma.com/choiceModules/builder_public/index.html?type=composer&multiple=false&m=创作人">composer</a>
+    </p>
+    <p>访问参数multiple：</p>
+    <p>true：多选、false：单选</p>
+    <script>
+        var choiceFileModules = {
+            choiceModules: function (obj) {
+                window.localStorage.setItem('choiceModulesDataValue', JSON.stringify(obj));
+                var box = document.getElementsByTagName('body')[0];
+                var frame = document.createElement('iframe');
+                frame.domSetAttr({
+                    src: '/choiceModules/builder_public/src/html/choiceModules.html',
+                    id: 'choiceModules',
+                    allowtransparency: 'true',
+                    scrolling: 'no',
+                    style: 'position: fixed; left: 0; top: 0; z-index: 6000; border: none; width: 100%; height: 100%'
+                });
+                box.appendChild(frame);
+            },
+            choicePopUpIndex: function () {
+                var o= window.location.search.substr(1).getUrlArguments();
+                console.log(o);
+                if(o.type){
+                    var sendData = {
+                        multiple: (typeof o.multiple === "string") ? ((o.multiple === 'true') ? 1 : 0) : o.multiple,
+                        modules: o.type,
+                    };
+                    choiceFileModules.choiceModules(sendData)
+                }
+            }
+        };
+        HTMLElement.prototype.domSetAttr = function (a) {
+            for(var i in a){this.setAttribute(i, a[i]);}
+        };
+        String.prototype.getUrlArguments = function () {
+            var a = [], b = {};
+            this.split('&').forEach(function (v) {
+                a.push(v.split('='));
+            });
+            a.forEach(function (v) {
+                b[decodeURI(v[0]).trim()] = decodeURI(v[1]).trim();
+            });
+            return JSON.parse(JSON.stringify(b));
+        };
+        choiceFileModules.choicePopUpIndex();
+    </script>
+</body>
+</html>

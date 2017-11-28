@@ -1,0 +1,2595 @@
+@import "base";
+
+/*图片页面模块基本样式begin--所有模块继承引用*/
+/*基本样式重置*/
+body{
+  font: 14px "微软雅黑";
+  color: #0e293f;
+  a{
+    text-decoration: none;
+    color: @opa0;
+  }
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input,textarea,button{
+  outline: none;
+  //border: none;
+}
+ul,ol,li{
+  list-style: none;
+}
+i,em{
+  font-style: normal;
+}
+img{
+  vertical-align: middle;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/*   新增   */
+
+.clearFloat{
+  zoom: 1;
+}
+.clearFloat:after{
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+/*基本样式重置*/
+.mCSB_outside + .mCS-minimal.mCSB_scrollTools_vertical,
+.mCSB_outside + .mCS-minimal-dark.mCSB_scrollTools_vertical {
+  right: 1px;
+  margin: 10px 0;
+}
+/*引用旧样式begin*/
+
+.zm-choicePicture-hide {
+  display: none !important;
+}
+.zm-choiceFile-wrapShadow {
+  box-shadow: 0 0 5px @blackOpa2;
+}
+
+.zm-choiceFile-wrap .zm-dialog-box.zm-movableBox {
+  margin-top: 200px;
+  margin-left: 200px;
+}
+.zm-dialog-box .zm-dialog .zm-dialog-header .zm-dialog-header-btn svg.zm-dialog-choiceFileCloseBtn {
+  width: 27px;
+  height: 25px;
+  top:0;
+  left: -1px;
+}
+
+//svg颜色样式
+.iconColor0{fill:@white;}
+.iconColor1{fill:@baseColor;}
+.iconColor2{fill:@black;}
+.iconColor3{fill:@gray2;}
+.iconColor4{fill:@gray3;}
+.iconColor5{fill:@baseColorLight3;}
+.iconColor6{fill:@gray1;}
+.iconColor7{fill:@attention;}
+.iconColor8{fill:@fontColor}
+.iconColor9{fill:@baseColorLight2}
+.iconColor10{fill:@opa0}
+
+.zm-choiceFile-wrap{
+  width: 1240px;
+  .zm-choiceRadio-middle {
+    input{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+//视频预览小窗
+.zm-QuickPreview-popup{
+  width: 300px;
+  height: 198px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #fefefe;
+  box-shadow: 0 0 5px #999;
+  position: fixed;
+  z-index: 1001;
+  position: fixed;
+  .prev_img{
+    width: 288px;
+    height: 162px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    .prev_video{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .prev_mes{
+    width: 288px;
+    height: 24px;
+    font-size: 12px;
+    .prev_name{
+      display: inline-block;
+      float: left;
+      height: 24px;
+      line-height: 24px;
+    }
+    .prev_time{
+      display: inline-block;
+      float: right;
+      height: 24px;
+      line-height: 24px;
+    }
+  }
+}
+.zm-choiceFile-FileWrapWidth {
+  width: 950px !important;
+}
+.zm-choiceFile-top{
+  width: 1240px;
+  height: 40px;
+  background-color: @baseColorLight4;
+}
+.zm-choiceFile-topColorNone {
+  background: none;
+  border-bottom: 1px solid @gray2;
+}
+.zm-choiceFile-topFile {
+  background-color: @white;
+  border-bottom: 1px solid @gray2;
+}
+.zm-choiceFile-topL{
+  cursor: pointer;
+  float: left;
+  width:120px;
+  height:36px;
+  text-align: center;
+  line-height: 36px;
+  margin-top:4px;
+  font-size: 14px;
+  color: @fontColor;
+  border-radius: 5px 5px 0 0;
+}
+.zm-choiceFile-topL-nowClick{
+  background-color: @white;
+  box-shadow: 0 0 5px @blackOpa2;
+}
+.zm-choiceFile-topR{
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-right:30px;
+}
+.zm-choiceFile-library {
+  margin-left: 5px;
+  width: 140px;
+}
+.zm-choiceFile-topR{
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-right:30px;
+}
+.zm-choiceFile-middleBox{
+  width: 1240px;
+  height:600px;
+  overflow: hidden;
+}
+.zm-choiceFile-middleBoxList{
+  width: 1240px;
+  height:600px;
+}
+.zm-choiceRadio-top{
+  width: 1240px;
+  height: 40px;
+  overflow: hidden;
+}
+.zm-choiceRadio-top div{
+  float: left;
+}
+.zm-choiceRadio-topL{
+  float: left;
+  width: 385px;
+  height: 36px;
+  text-align: center;
+  font:13px/36px "微软雅黑";
+  color: @fontColor;
+}
+.zm-choiceRadio-topTxt {
+  margin-left: 174px;
+}
+.zm-choiceRadio-leftTxt{
+  text-align: left;
+  padding-left: 15px;
+}
+div.zm-choiceRadio-topR{
+  float: right;
+  height: 36px;
+  margin-right: 8px;
+}
+span.zm-choiceRadio-line {
+  display: inline-block;
+  float: left;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.zm-choiceFile-lineColor {
+  color: @gray2;
+}
+.zm-choiceRadio-topR div{
+  float: left;
+  margin-left: 14px;
+}
+.zm-choiceRadio-classify {
+  margin-top: 9px;
+  text-align: left;
+  padding-left: 20px;
+  width: 259px;
+  font: bold 14px "微软雅黑";
+  .zm-choiceVideo-videoCategory {
+    margin-left: 19px;
+  }
+}
+.zm-choiceFile-classifyIcon {
+  svg {
+    width: 13px;
+    height: 13px;
+    float: left;
+    margin-right: 8px;
+    margin-top: 4px;
+  }
+}
+.zm-choiceFile-iconTitle {
+  margin-left: 10px;
+  svg {
+    position: relative;
+    left: -8px;
+    top: 6px;
+    fill:@white;
+    width: 24px;
+    height: 24px;
+  }
+}
+.zm-choiceFile-uploadingFile {
+  svg {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 4px;
+  }
+}
+span.zm-choiceFile-iconBell {
+  display: inline-block;
+  vertical-align: middle;
+  padding-top: 5px ;
+  padding-right: 3px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+.zm-choiceRadio-topM{
+  float: left;
+  height: 36px;
+  div {
+    float: left;
+    margin-left: 15px;
+  }
+}
+.zm-choiceRadio-topM div:hover {
+  color: @baseColor;
+}
+span.zm-choiceRadio-line {
+  display: inline-block;
+  float: left;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.zm-choiceFile-btn1{
+  display: inline-block;
+  cursor: pointer;
+  height: 26px;
+  font-size: 12px;
+  margin-top: 7px;
+  text-align: center;
+  line-height: 30px;
+  svg {
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 4px;
+    margin-top: 6px;
+  }
+}
+.zm-choiceFile-btn1:hover{
+  border-color: @baseColorDeep1;
+}
+.zm-choiceFile-btn2{
+  color: @fontColor;
+  display: inline-block;
+  cursor: pointer;
+  height: 26px;
+  margin-top: 11px;
+  text-align: center;
+  font: 12px/22px "微软雅黑";
+}
+.zm-choiceFile-btn2:hover {
+  color: @baseColor;
+  svg{
+    fill: @baseColor;
+  }
+}
+.zm-choiceFile-moveToCatalog {
+  svg {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 4px;
+    margin-top: 5px;
+  }
+}
+.zm-choiceFile-picMoveToCatalog {
+  svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    margin-top: 5px;
+  }
+}
+.zm-choiceFile-addNews {
+  svg {
+    fill: @fontColor;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-right: 4px;
+    margin-top: 3px;
+  }
+}
+.zm-choiceFile-addAlbum {
+  svg {
+    fill:@fontColor;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+  }
+}
+.zm-choiceFile-batchDel {
+  svg {
+    fill:@fontColor;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+  }
+}
+.zm-choiceFile-revFile {
+    svg{
+      float: left;
+      width: 18px;
+      height: 18px;
+      margin-right: 3px;
+      margin-top: 2px;
+    }
+}
+.zm-choiceFile-revPic {
+  svg {
+    width: 15px;
+    height: 15px;
+    float: left;
+    margin-top: 4px;
+    margin-right: 4px;
+  }
+}
+.zm-choiceFile-btn2:hover{
+  border-color: @baseColorDeep1;
+}
+.zm-choiceFile-copyToCatalog {
+  svg {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-top: 1px;
+    margin-right: 4px;
+  }
+}
+.zm-choiceFile-uploadingPic {
+  svg {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-top: 2px;
+    margin-right: 4px;
+  }
+}
+.zm-choiceFile-prohibit {
+  color: @gray2;
+  font-size: 12px;
+  margin-top: 11px;
+  svg {
+    fill: @gray2;
+  }
+}
+.zm-choiceFile-prohibit:hover{
+  color: @gray2;
+  svg {
+    fill: @gray2;
+  }
+}
+.zm-choiceFile-btnFile1{
+  background-color:@baseColorDeep1;
+}
+#zm-choicePicture-upPicBtn,
+#zm-choicePicture-upFileBtn{
+  font-size: 0;
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+  width: 90px;
+  height: 26px;
+  left: 740px;
+  top: 90px;
+}
+#zm-choicePicture-upFileBtn {
+  left: 566px;
+}
+.zm-choiceFile-toptext{
+  height: 40px;
+  overflow: hidden;
+  line-height:39px;
+}
+.zm-choiceFile-toptext input {
+  margin-left: 10px;
+  position: relative;
+  left: 10px;
+  height: 28px;
+  border-radius: 20px;
+  width: 176px;
+  border: 1px solid @gray3;
+  padding-left: 10px;
+}
+.zm-chioceFile-borderColor input{
+  border: 1px solid @gray2;
+}
+.zm-chioceFile-borderHighColor input{
+  border: 1px solid @baseColor;
+}
+.zm-choiceFile-topR{
+  position: relative;
+  float: right;
+  margin-top: 5px;
+  margin-right:30px;
+}
+.zm-choiceFile-topTextTitle{
+  float: right;
+  height:40px;
+  margin-right: 30px;
+  color: @fontColor;
+  background-color: @opa0;
+  font: 12px/40px "微软雅黑";
+}
+span.zm-choiceFile-sceahIcon {
+  position: relative;
+  left:-30px;
+  top: 5px;
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+span.zm-choiceFile-sceahIconVideo{
+  left: -22px;
+  top: 6px;
+}
+.zm-choiceRadio-middle{
+  width: 1240px;
+  height:512px ;
+  border-top: 1px solid @gray3;
+}
+.zm-choiceRadio-middleL{
+  position: absolute;
+  width: 256px;
+  height:512px;
+  top:0;
+  left: 0;
+  background-color:@baseColorLight3;
+}
+.zm-choiceFile-bottom1,
+.zm-choiceFile-bottom2,
+.zm-choiceFile-fileBottom{
+  position: relative;
+  width: 1240px;
+  height: 50px;
+  border-top: 1px solid @gray3;
+}
+.zm-choiceFile-fileBottom {
+  width: 980px;
+  height: 50px;
+}
+.zm-choiceFile-btn4,
+.zm-choiceFile-btn3{
+  cursor: pointer;
+  position: absolute;
+  width: 100px;
+  height: 28px;
+  top: 9px;
+  right: 50px;
+  text-align: center;
+  line-height: 28px;
+  border-radius: 2px;
+  color: @white;
+  background-color: @gray3;
+}
+.zm-choiceFile-btn4{
+  right: 1065px;
+  top: 8px;
+  background-color: @baseColor;
+}
+.zm-choiceFile-btn4:hover{
+  background-color: @baseColorDeep1;
+}
+.zm-choiceFile-btn3Add {
+  background-color: @baseColor;
+}
+.zm-choiceFile-btn3Add:hover{
+  background-color:@baseColorDeep1;
+}
+/*引用旧样式end*/
+
+/*图片文件列表begin*/
+.zm-choiceRadio-middleR{
+  float: right;
+  height:512px;
+  width: 970px;
+  overflow: hidden;
+}
+.zm-choiceRadio-middleComposer{
+  width: 1240px;
+}
+.zm-choiceRadio-middleRWidth2 {
+  width: 1240px;
+}
+.zm-choiceRadio-middleRHeight {
+  height: 477px;
+}
+/*博客文件列表*/
+.zm-choiceRadio-middleBlogger {
+  float: right;
+  height:512px;
+  width: 1240px;
+  overflow: hidden;
+  border-left:none;
+}
+/*滚动条样式*/
+.zm-choiceFile-wrap{
+  .zm-choicePicture-middleL {
+    div.mCS-minimal.mCSB_scrollTools_vertical {
+      right: 130px;
+    }
+  }
+  //上传文件滚动条
+  .zm-choiceFile-progressBarPageBox {
+    .mCS-minimal.mCSB_scrollTools_vertical {
+      div.mCSB_draggerContainer:after {
+        top: 381px;
+      }
+    }
+  }
+  //移动到分类滚动条
+  .zm-choiceFileCopyToClassify {
+    .mCS-minimal.mCSB_scrollTools_vertical {
+      div.mCSB_draggerContainer:after {
+        top: 281px;
+      }
+    }
+  }
+  .mCS-minimal.mCSB_scrollTools_vertical {
+    width: 8px;
+    right: 1px;
+    .mCSB_draggerContainer {
+      width: 8px;
+    }
+    div.mCSB_draggerContainer:after,
+    div.mCSB_draggerContainer:before{
+      content:'';
+      position: absolute;
+      left: 0;
+      top: -6px;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-bottom: 4px solid @gray2;
+      z-index: 2;
+    }
+    div.mCSB_draggerContainer:after{
+      top: 495px;
+      border-top: 4px solid @gray2;
+      border-bottom: none;
+    }
+    #mCSB_2_dragger_vertical {
+      width: 8px;
+    }
+  }
+  .mCS-minimal.mCSB_scrollTools_vertical:hover {
+    background-color: @baseColorLight5;
+    border-radius: 2px;
+    .mCSB_draggerContainer:before{
+      border-bottom: 4px solid @fontColor;
+    }
+    .mCSB_draggerContainer:after{
+      border-top: 4px solid @fontColor;
+    }
+    .mCSB_dragger_bar {
+      background-color: @baseColorLight1;
+    }
+  }
+}
+/*商品滚动条改动*/
+.zm-choiceFile-wrap {
+  .zm-choiceGoods-scroll {
+    .mCS-minimal.mCSB_scrollTools_vertical {
+      div.mCSB_draggerContainer:after {
+        top: 461px;
+      }
+    }
+  }
+}
+.zm-choiceRadio-spli{
+  height:auto;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  padding-top: 6px;
+}
+.zm-choiceRadio-spliGoods{
+  padding-left: 1px;
+  padding-top: 0;
+}
+.zm-choiceFile-rightWidth1 {
+  width: 1240px;
+}
+.zm-choiceR-lists{
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 10px;
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 140px;
+  border: 1px solid @gray3;
+}
+.zm-choiceR-listsRadio{
+  margin-left: 14px;
+}
+.zm-choiceR-listsComposer{
+  margin-left: 13px;
+}
+/*视频选中遮罩层*/
+.zm-choiceFile-videoShade {
+  width: 176px;
+  height: 100px;
+  background-color: @baseOpa5;
+  float: left;
+}
+/*音频选中的遮罩层*/
+.zm-choiceFile-radioShade {
+  width: 117px;
+  height: 120px;
+  background-color: @baseOpa2;
+  float: left;
+}
+.zm-choiceR-videolists {
+  width: 178px;
+  height: 122px;
+}
+//拖动图片的遮罩层
+.zm-choiceFile-movePicShade,
+.zm-choiceFile-moveVideoShade{
+  cursor: move;
+  width: 118px;
+  height: 140px;
+  background-color: @baseOpa2;
+  border: 1px solid @baseColor;
+  position: relative;
+  top: -139px;
+}
+//拖动视频的遮罩层
+.zm-choiceFile-moveVideoShade {
+  width: 178px;
+  height: 120px;
+  top: -120px;
+  left: -1px;
+}
+//产品回收站遮罩
+.zm-choiceFile-whiteShade1,
+.zm-choiceFile-whiteShade2,
+.zm-choiceFile-whiteShade3{
+  width: 52px;
+  height: 50px;
+  background-color: @whiteOpa7;
+  position: relative;
+  top: 5px;
+  left: 172px;
+}
+//图片回收站遮罩
+.zm-choiceFile-whiteShade2 {
+  width: 118px;
+  height: 120px;
+  top: -139px;
+  left: 0;
+}
+//视频回收站遮罩
+.zm-choiceFile-whiteShade3 {
+  width: 178px;
+  height: 100px;
+  top: -120px;
+  left: -1px;
+}
+li.zm-choiceFile-checkStyle {
+  border:1px solid @baseColor;
+  input:-ms-input-placeholder {
+    color: @white;
+  }
+  input::-moz-placeholder,
+  input:-moz-placeholder{
+    color: @white;
+    opacity: 1;
+  }
+  input::-webkit-input-placeholder{
+    color: @white;
+  }
+  .zm-chioceFile-fileName {
+    background-color: @baseColor;
+  }
+}
+.zm-chioceFile-file {
+  width: 118px;
+  height: 120px;
+  margin-left: 0;
+  background-size:cover;
+  background-position:center;
+  div{
+    width: 120px;
+    height: 120px;
+    background-color: @baseOpa1;
+    padding-top: 20px;
+    .zm-chioceFile-fileType{
+      margin: auto;
+      width: 60px;
+      height: 75px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  i {
+    position: absolute;
+    top: 0;
+    left: 90px;
+    width: 0;
+    height: 0;
+    border-top: 28px solid @baseColor;
+    border-left: 28px solid transparent;
+    z-index:18;
+    display: none;
+  }
+  b{
+    position: absolute;
+    top: 0;
+    left: 102px;
+    z-index:18;
+    display: none;
+    svg {
+      fill:@white;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+.zm-chioceFile-fileVideo {
+  width: 176px;
+  height: 100px;
+  margin-left: 0;
+  margin-right: 1px;
+  div{
+    width: 174px;
+    height: 100px;
+  }
+  i {
+    left: 146px;
+    border-top: 30px solid @baseColor;
+    border-left: 30px solid transparent;
+  }
+  b {
+    left: 158px;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+.zm-chioceFile-fileEdit {
+  background-color: @blackOpa5;
+  width: 117px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 98px;
+  fill:@white;
+  z-index:20;
+  display: none;
+  span {
+    display: block;
+    float: left;
+    width: 20px;
+    max-height: 20px;
+    line-height: 20px;
+    margin-left: 3px;
+  }
+  span:hover{
+    background-color: @whiteOpa5;
+  }
+  .zm-chioceFile-magnifyClick {
+    padding-left: 1px;
+    padding-top: 1px;
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .zm-chioceFile-radioPlay {
+    padding-left: 3px;
+    padding-top: 2px;
+    svg{
+      width: 15px;
+      height: 15px;
+    }
+  }
+  .zm-chioceFile-delIcon {
+    padding-left: 1px;
+    padding-top: 2px;
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .zm-chioceFile-download {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .zm-chioceFile-restore {
+    padding-left: 3px;
+    padding-top: 2px;
+    svg{
+      width: 14px;
+      height: 14px;
+    }
+  }
+  .zm-chioceFile-renameIcon {
+    padding-left: 3px;
+    padding-top: 1px;
+    svg{
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .zm-choiceFile-txtTitleBox {
+    display: block;
+    position: relative;
+  }
+  .zm-choiceFile-txtTitle {
+    display: block;
+    width: 36px;
+    position: absolute;
+    left: -15px;
+    top: -55px;
+    border-radius: 2px;
+    text-align: center;
+    background-color: @white;
+    color: @fontColor;
+  }
+}
+.zm-choiceFile-videoPreview{
+  position: absolute;
+  left: 5px;
+  top: 80px;
+  display: none;
+  z-index:1;
+  svg {
+    width: 20px;
+    height: 20px;
+    fill:@white;
+  }
+}
+.zm-choiceFile-videoPreview:hover {
+  svg {
+    fill:@baseColorLight4;
+  }
+}
+.zm-choiceFile-repetition {
+  display: none;
+  b,
+  i {
+    position: absolute;
+    left: 98px;
+    top:  139px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid @f60;
+    z-index: 5;
+  }
+  b{
+    top: 140px;
+    border-bottom: 10px solid @fdc;
+    z-index: 6;
+  }
+  span{
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    fill:@f60;
+  }
+  .zm-choiceFile-nameWarningHint,
+  .zm-choiceFile-nameWarning{
+    display: block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 8px;
+    background-color: @fdc;
+    color: @fontColor;
+    position: absolute;
+    left: 85px;
+    top: 149px;
+    border: 1px solid @f60;
+    border-radius: 2px;
+    z-index: 5;
+  }
+  .zm-choiceFile-nameWarningHint{
+    width: 260px;
+  }
+}
+.zm-choicePicture-picture7n {
+  .zm-choiceR-lists:nth-child(7n) {
+    .zm-choiceFile-nameWarning {
+      left: 18px;
+    }
+  }
+  .zm-choiceR-lists:nth-child(7n-1),
+  .zm-choiceR-lists:nth-child(7n) {
+    .zm-choiceFile-nameWarningHint {
+      left: -130px;
+    }
+  }
+}
+.zm-choicePicture-album9n {
+  .zm-choiceR-lists:nth-child(9n) {
+    .zm-choiceFile-nameWarning {
+      left: 18px;
+    }
+  }
+  .zm-choiceR-lists:nth-child(9n-1),
+  .zm-choiceR-lists:nth-child(9n) {
+    .zm-choiceFile-nameWarningHint {
+      left: -130px;
+    }
+  }
+}
+.zm-chioceFile-fileName {
+  height: 20px;
+  width: 118px;
+  box-sizing: border-box;
+  background-color: @white;
+  margin-left: 0;
+  margin-top: -2px;
+  border: 1px solid @opa0;
+  input:-ms-input-placeholder {
+    color: @fontColor;
+  }
+  input::-moz-placeholder,
+  input:-moz-placeholder{
+    color: @fontColor;
+    opacity: 1;
+  }
+  input::-webkit-input-placeholder{
+    color: @fontColor;
+  }
+  input {
+    font-size: 12px;
+    display: block;
+    height: 18px;
+    width: 118px;
+    padding-left: 5px;
+    margin: 0;
+    background-color: @opa0;
+    border: 1px solid @opa0;
+    border-radius: 0;
+    font: 10px/10px "微软雅黑";
+  }
+}
+.zm-choiceFile-fileNameEdit {
+  input:-ms-input-placeholder {
+    color: @gray1;
+  }
+  input::-moz-placeholder,
+  input:-moz-placeholder{
+    color: @gray1;
+    opacity: 1;
+  }
+  input::-webkit-input-placeholder{
+    color: @gray1;
+  }
+}
+.zm-chioceFile-fileVideoName {
+  width: 176px;
+  height: 19px;
+  margin-top: 1px;
+  input {
+    height: 18px;
+    width: 174px;
+    font: 10px "微软雅黑";
+  }
+}
+.zm-chioceFile-catalogFileName {
+   display: none;
+   position: absolute;
+  b,
+  i {
+     position: absolute;
+     left: 162px;
+     top:  -9px;
+     width: 0;
+     height: 0;
+     border-left: 10px solid transparent;
+     border-right: 10px solid transparent;
+     border-bottom: 10px solid @f60;
+     z-index: 35;
+   }
+  b{
+     top: -8px;
+     border-bottom: 10px solid @fdc;
+     z-index: 36;
+   }
+  span{
+     position: absolute;
+     left: 165px;
+     top: -35px;
+     fill:@f60;
+   }
+  .zm-choiceFile-nameWarningHint,
+  .zm-choiceFile-nameWarning{
+     display: block;
+     width: 110px;
+     height: 30px;
+     line-height: 30px;
+     padding-left: 8px;
+     background-color: @fdc;
+     color: @fontColor;
+     position: absolute;
+     left: 145px;
+     top: 1px;
+     border: 1px solid @f60;
+     border-radius: 2px;
+     z-index: 35;
+   }
+  .zm-choiceFile-nameWarningHint{
+     width: 260px;
+     left: 1px;
+   }
+ }
+.zm-choiceFile-catalogFileName2 {
+  i {
+    left: 128px;
+    top:  -9px;
+  }
+  b{
+    left: 128px;
+    top: -8px;
+  }
+  span{
+    left: 132px;
+    top: -35px;
+  }
+  .zm-choiceFile-nameWarning{
+    left: 120px;
+    top: 1px;
+  }
+  .zm-choiceFile-nameWarningHint{
+    left: -30px;
+
+  }
+}
+.zm-choiceFile-catalogFileName3 {
+  i {
+    left: 178px;
+    top:  -9px;
+  }
+  b{
+    left: 178px;
+    top: -8px;
+  }
+  span{
+    left: 182px;
+    top: -35px;
+  }
+  .zm-choiceFile-nameWarning{
+    left: 120px;
+    top: 1px;
+  }
+}
+.zm-choiceFile-catalogRepetition {
+  height: 20px;
+  width: 118px;
+  border:1px solid @opa0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.zm-chioceFile-fileNameBaseColor{
+  border: 1px solid @baseColor;
+}
+.zm-chioceFile-fileNameWarnColor{
+  border: 1px solid @red;
+}
+//input搜索框选中的边框样式
+#zm-chioceFile-inputBorderBaseColor {
+  border: 1px solid @baseColor;
+  box-shadow: 0 0 4px @baseColor;
+}
+/*文件列表bend*/
+
+/*移动到分类弹窗begin*/
+.zm-choiceFileCopyToClassify {
+  width: 540px;
+  height: 410px;
+  overflow: hidden;
+}
+/*小分类*/
+.zm-fileMove-childrenClassify {
+  display: none;
+  li {
+    padding-left: 40px;
+  }
+}
+.zm-fileMove-childrenClassify3 {
+  display: none;
+  li {
+    padding-left: 40px;
+  }
+}
+.zm-choiceFileCopyToClassify1 {
+  width: 480px;
+  height: 300px;
+  border:1px solid @gray3;
+  margin-top: 30px;
+  margin-left: 30px;
+  overflow: hidden;
+  li{
+    position: relative;
+  }
+  span {
+    padding-left: 10px;
+  }
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+  .zm-fileMove-icon1 {
+    display: none;
+    position: relative;
+    top: 5px;
+    left: 1px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .zm-fileMove-icon2 {
+    position: relative;
+    left: 0;
+    top: 3px;
+  }
+  .zm-fileMove-icon3 {
+    position: relative;
+    left: 0;
+    top: 3px;
+    fill:@baseColor;
+    display: none;
+  }
+  //文字基本色
+  .zm-choiceFile-baseColr {
+    color: @baseColor;
+  }
+}
+.zm-radioAlbumbtn {
+  height: 95px;
+  span {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    border:1px solid @baseColor;
+    border-radius: 2px;
+    margin-top: 25px;
+    line-height: 28px;
+    text-align: center;
+  }
+  .zm-choiceFileCopyBtn-upload{
+    display: none;
+    border: none;
+    width: 50px;
+    svg{
+      position: relative;
+      left: 5px;
+      top: 5px;
+      width: 20px;
+      height: 20px;
+      fill: @baseColor;
+    }
+  }
+  .zm-choiceFileCopyBtn-cancel {
+    margin-left: 180px;
+    color: @fontColor;
+  }
+  .zm-choiceFileCopyBtn-keep {
+    margin-left: 20px;
+    background-color: @baseColor;
+    color: @white;
+  }
+  .zm-choiceFileCopyBtn-keepGray {
+    background-color: @gray2;
+    border: 1px solid @opa0;
+  }
+}
+  /*移动到分类弹窗end*/
+/*图片放大轮播图begin*/
+.zm-chioceFile-magnify {
+  overflow: hidden;
+  width: 970px;
+  height: 509px;
+  position: absolute;
+  left: 270px;
+  top: 123px;
+  background-color: @whiteOpa8;
+  z-index: 99999;
+  display: none;
+  /*左右按钮*/
+  .zm-chioceFile-magnifyBtn {
+    user-select: none;
+    position: relative;
+    left: 2px;
+    top: 160px;
+    display: none;
+    span{
+      cursor: pointer;
+      display: inline-block;
+      height: 80px;
+      width: 34px;
+      background-color: @blackOpa2;
+      line-height: 95px;
+      text-align: center;
+    }
+    span:hover{
+      background-color: @blackOpa4;
+    }
+  }
+  span.zm-chioceFile-magnifyBtnR {
+    position: relative;
+    left: 895px;
+    top: 0;
+    svg{
+      position: relative;
+      left: -8px;
+      top: 5px;
+    }
+  }
+  /*中间图片轮播*/
+  .zm-choicePicture-picShow {
+    position: absolute;
+    left: 23%;
+    top: 10px;
+    width: 480px;
+    height: 490px;
+    background-color: @white;
+    box-sizing: border-box;
+  }
+  ul{
+    width:auto;
+  }
+  .zm-chiocePic-magnify {
+    float: left;
+    .zm-chiocePic-blackBg {
+      position: relative;
+      left: 15px;
+      top: 12px;
+      width: 450px;
+      height: 430px;
+      background-color: @black;
+    }
+    .zm-chiocePic-bigImg {
+      position: relative;
+      width: 450px;
+      height: 430px;
+      background-size:cover;
+      background-position:center;
+    }
+    >span {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      width: 480px;
+      height: 28px;
+      left: 0;
+      top: 32px;
+      padding-left: 20px;
+      line-height: 28px;
+      background-color: @gray4;
+    }
+  }
+  /*关闭按钮*/
+  .zm-chioceFile-magnifyCloseBtn {
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    top: -70px;
+    right: -930px;
+    color: @fontColor;
+    font:200 35px "微软雅黑";
+  }
+}
+
+.zm-chioceFile-magnifyAlbum {
+  width: 1237px;
+  left: 2px;
+  top: 38px;
+  .zm-choicePicture-picShow {
+    left:30%;
+  }
+  .zm-chioceFile-magnifyCloseBtn{
+    right: -1190px;
+  }
+  span.zm-chioceFile-magnifyBtnR{
+    left: 1162px;
+  }
+
+}
+/*图片放大轮播图end*/
+//分界线
+.zm-choiceFile-boundary {
+  width: 1px;
+  height: 505px;
+  position: absolute;
+  left: 270px;
+  top: 125px;
+  background-color: @gray3;
+}
+.zm-choiceFile-boundary2 {
+  top: 85px;
+}
+/*图片侧边栏begin*/
+.zm-choicePicture-middleL{
+  float: left;
+  cursor: pointer;
+  position: absolute;
+  overflow: hidden;
+  width: 400px;
+  height:512px;
+  .zm-choicePicture-middleLTop{
+    width: 400px;
+    height:512px;
+    overflow: hidden;
+  }
+  .zm-chioceFile-cataLogCls {
+    height:auto;
+    position: relative;
+    font: 12px "微软雅黑";
+    ul{
+      display: none;
+    }
+    .zm-choiceFile-radioNamePadding {
+      padding-left: 35px;
+    }
+    li{
+      cursor: pointer;
+      position: relative;
+      width: 269px;
+      line-height: 36px;
+      li.zm-chioceFile-clsLists {
+        padding-left: 40px;
+      }
+      li.zm-choiceFile-catalog3 {
+        padding-left: 72px;
+      }
+      li {
+        cursor: pointer;
+        width: 269px;
+        p{
+          padding-left: 20px;
+        }
+        .zm-chioceFile-catalogName {
+          cursor: pointer;
+          margin-left: 5px;
+          width: 145px;
+          height: 25px;
+        }
+      }
+    }
+    .zm-chioceFile-fixation {
+      padding-left: 40px;
+    }
+    .zm-chioceFile-recycle {
+      padding-left: 23px;
+    }
+    .zm-chioceFile-recycleVideo{
+      padding-left: 40px;
+    }
+    input {
+      cursor: pointer;
+      height: 25px;
+      border:1px solid @opa0;
+      background-color: @opa0;
+      padding: 4px;
+      margin-left: 1px;
+      width: 150px;
+      font:12px "微软雅黑";
+    }
+    .zm-choiceFile-catalogBorder {
+      border:1px solid @baseColor;
+    }
+    .zm-choiceFile-catalogWarnBorder {
+      border:1px solid @red;
+    }
+  }
+  .zm-chioceFile-catalogNameBorder {
+    border:1px solid @baseColor;
+  }
+  //鼠标移上类目的样式
+  .zm-chioceFile-hoverList {
+    background-color: @baseColorLight4;
+  }
+  //鼠标点击类目的样式
+  input:-ms-input-placeholder {
+    color: @fontColor;
+  }
+  input::-moz-placeholder,
+  input:-moz-placeholder{
+    color: @fontColor;
+    opacity: 1;
+  }
+  input::-webkit-input-placeholder{
+    color: @fontColor;
+  }
+  .zm-choiceFile-classListNameEdit {
+    input:-ms-input-placeholder {
+      color: @gray1;
+    }
+    input::-moz-placeholder,
+    input:-moz-placeholder{
+      color: @gray1;
+      opacity: 1;
+    }
+    input::-webkit-input-placeholder{
+      color: @gray1;
+    }
+  }
+  .zm-chioceFile-checkedList {
+    background-color: @baseColor;
+    color: @white;
+    input:-ms-input-placeholder {
+      color: @white;
+    }
+    input::-moz-placeholder,
+    input:-moz-placeholder{
+      color: @white;
+      opacity: 1;
+    }
+    input::-webkit-input-placeholder{
+      color: @white;
+    }
+  }
+  .zm-choicePicture-setIcon {
+    display: block;
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 30px;
+    width: 35px;
+    padding-left: 15px;
+    padding-right: 5px;
+    z-index: 4;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .zm-chioceFile-isRename {
+    display: none;
+  }
+  .zm-chioceFile-scrollFalse {
+    display: block;
+    height: 32px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 3px;
+    svg {
+      width: 16px;
+      height: 16px;
+      fill:@baseColorLight3;
+    }
+  }
+  .zm-chioceFile-scrollFalse:hover {
+    svg {
+      fill:@baseColorLight2;
+    }
+  }
+  .zm-chioceFile-scrollTrue{
+    display: block;
+    height: 32px;
+    float: right;
+    margin-top: 3px;
+    margin-right: 10px;
+    svg {
+      width: 16px;
+      height: 16px;
+      fill:@baseColorLight3;
+    }
+  }
+  .zm-chioceFile-scrollTrue:hover {
+    svg {
+      fill:@baseColorLight2;
+    }
+  }
+}
+//类名前的减号
+.zm-chioceFile-minusIcon {
+  float: left;
+  height: 30px;
+  margin-top: 2px;
+  margin-left: 20px;
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+//类类名前的加号
+.zm-chioceFile-addIcon {
+  float: left;
+  margin-top: 2px;
+}
+//回收站类目前标识
+.zm-choiceFile-delPicLib {
+  float: left;
+  margin-left: -5px;
+  margin-right: 8px;
+  margin-top: 2px;
+  svg{
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/*添加类目框*/
+.zm-chioceFile-addCatalog{
+  display: block;
+  position: absolute;
+  left: 257px;
+  top:4px;
+  width: 130px;
+  box-shadow: 0 0 5px @blackOpa2;
+  border-radius: 5px;
+  z-index: 999;
+  span{
+    position: relative;
+    background-color: @white;
+    color: @fontColor;
+    display: block;
+    width: 130px;
+    height: 30px;
+    padding-left: 13px;
+    z-index:999;
+  }
+  span:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  span:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  span:hover{
+    background-color: @baseColorLight4;
+  }
+}
+.zm-choiceFile-catalog1 .zm-chioceFile-addCatalog {
+  display: none;
+}
+/*图片侧边栏end*/
+
+//小提示框样式
+.zm-choiceFile-hintMessage {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  font-size: 14px;
+  color: @fontColor;
+  word-break: break-all;
+}
+.zm-choiceFile-Know {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 101px;
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: @white;
+  background-color: @baseColor;
+}
+.zm-choiceFile-Know:hover {
+  background-color: @baseColorDeep1;
+}
+.zm-choiceFile-confirm,
+.zm-choiceFile-cancel {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 101px;
+  margin-left: 65px;
+  width: 60px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  color: @fontColor;
+  text-align: center;
+  border:1px solid @baseColor;
+  border-radius: 2px;
+}
+.zm-choiceFile-confirm {
+  margin-left: 140px;
+  color: @white;
+  background-color: @baseColor;
+}
+.zm-choiceFile-searchNone {
+  width: 200px;
+  height: 200px;
+  display: none;
+  p{
+    position: absolute;
+    left: 440px;
+    top: 160px;
+    color: @fontColor;
+    font-size: 16px;
+  }
+  svg{
+    position: absolute;
+    top:-100%;
+    width: 800px;
+    height: 800px;
+  }
+}
+
+//加载更多
+.zm-choicePicture-uploadMore {
+  display: none;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+/*图片页面模块样式end--所有模块继承引用*/
+
+
+/*新闻页面模块样式begin--博客/商品/服务模块继承引用*/
+
+.zm-choiceR-newsLists{
+  cursor: pointer;
+  margin-top:0;
+  margin-right: 8px;
+  position: relative;
+  overflow: hidden;
+  .zm-choiceR-bloggerListsDv{
+    width: 1232px;
+    overflow: hidden;
+  }
+  .zm-choiceR-newsListsDv{
+    width: 961px;
+    overflow: hidden;
+  }
+  >div>div {
+    float: left;
+    height: 60px;
+  }
+  .zm-choiceR-goodsLists {
+    position: relative;
+  }
+  .zm-choiceFile-optIconBox {
+    display: inline-block;
+    width: 40px;
+    height: 60px;
+    margin-left: 15px;
+    border-bottom: 1px solid @gray2;
+  }
+  .zm-choiceFile-optIcon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 20px;
+    margin-left: 1px;
+    border: 1px solid @gray3;
+    border-radius: 2px;
+    svg{
+      position: relative;
+      top: -2px;
+      left: 1px;
+      width: 12px;
+      height: 12px;
+      display: none;
+    }
+  }
+  .zm-choiceFile-bgD7 {
+    background-color: @gray3;
+  }
+  .zm-choiceFile-optIconBorderNone {
+    border:none;
+  }
+  .zm-choiceFile-newsPicBox {
+    width: 75px;
+    height: 60px;
+    border-bottom: 1px solid @gray2;
+    >div {
+      margin: 5px auto;
+      width: 50px;
+      height: 50px;
+      background-size:cover;
+      background-position:center;
+    }
+  }
+  .zm-choiceFile-newsPicBox1 {
+    display: inline-block;
+    width: 75px;
+    height: 60px;
+    border-bottom: 1px solid @gray2;
+    >span {
+      display: inline-block;
+      margin: 5px 8px;
+      width: 50px;
+      height: 50px;
+      background-size:cover;
+      background-position:center;
+    }
+  }
+  .zm-choiceGoods-goodsState {
+    display: inline-block;
+    width: 110px;
+    padding-left: 22px;
+    span{
+      float: left;
+    }
+    .zm-choiceGoods-goodsStateIcon1{
+      height: 59px;
+      svg {
+        fill:@baseColor;
+        margin-top: 22px;
+        margin-left: 6px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+    .zm-choiceGoods-goodsStateIcon2{
+      height: 59px;
+      svg {
+        fill:@baseColor;
+        margin-top: 22px;
+        margin-left: 4px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+  }
+  .zm-choiceGoods-GoodsSku {
+    display: inline-block;
+    width: 118px;
+  }
+  .zm-choiceGoods-Id {
+    display: inline-block;
+    width: 120px;
+  }
+  .zm-choiceGoods-goodsName {
+    display: inline-block;
+    width: 460px;
+  }
+  .zm-choiceFile-newsContentBox {
+    width: 750px;
+    padding-left: 15px;
+    border-bottom: 1px solid @gray2;
+    >div{
+      height: 30px;
+    }
+  }
+  .zm-choiceFile-newsContentBoxWidth2 {
+    width: 1020px;
+  }
+  .zm-choiceFile-newsContentTop {
+    line-height: 22px;
+  }
+  .zm-choiceFile-newsTitle {
+    float: left;
+    width: 670px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .zm-choiceFile-newsTime {
+    float: right;
+    font-size: 12px;
+  }
+  .zm-choiceFile-newsContentBottom {
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+  }
+  .zm-choiceFile-newsHint {
+    width: 80px;
+    border-bottom: 1px solid @gray2;
+    div {
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      width: 36px;
+      background-color: @baseColor;
+      border-radius: 2px;
+      margin-top: 8px;
+      margin-left: 25px;
+      color: @white;
+      display: none;
+    }
+  }
+  p{
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    height: 60px;
+    >span{
+      float: left;
+      height: 60px;
+      margin:0;
+    }
+  }
+
+}
+//新闻选中样式
+.zm-choiceR-newsListsHover {
+  background-color: @baseColorLight4;
+}
+.zm-choiceR-newsListschecked{
+  background-color: @baseColorLight3;
+}
+.zm--choiceR-goodsCheckIconColor {
+  background-color: @white;
+}
+.zm-choiceR-newsCheckIconColor {
+  background-color: @baseColor;
+}
+.zm-choiceR-newsListsGray {
+  background-color: @gray4;
+}
+/*新闻页面模块样式end--博客/商品/服务模块继承引用*/
+
+/*产品模块begin*/
+.zm-goodsList-topTitle {
+  position: relative;
+  left: 270px;
+  border-left: 1px solid @gray2;
+  height: 34px;
+  margin-bottom: 8px;
+  div{
+    height: 34px;
+    float: left;
+    line-height: 34px;
+    text-align: center;
+    background-color: @baseColorLight4;
+  }
+  div:nth-child(1){
+    width: 55px;
+  }
+  div:nth-child(2){
+    width: 110px;
+  }
+  div:nth-child(3){
+    width: 75px;
+  }
+  div:nth-child(4){
+    width: 119px;
+  }
+  div:nth-child(5){
+    width: 120px;
+  }
+  div:nth-child(6){
+    width: 490px;
+  }
+}
+.zm-choiceGoods-goodsTxt {
+  line-height: 60px;
+  text-align: center;
+  border-bottom: 1px solid @gray2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.zm-choiceGoods-marginTop {
+  margin-top: -7px;
+}
+.zm-choiceR-gooodsLiWidth {
+  width: 960px;
+}
+/*产品模块end*/
+/*文件上传进度begin*/
+.zm-choiceFile-progressBarPageBox{
+  height: 460px;
+}
+.zm-choiceFile-progressBarPage{
+  width: 520px;
+  height: 400px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 1px solid @gray2;
+  li{
+    height: 80px;
+    padding: 10px 0 10px 20px;
+    margin-right: 10px;
+    border-bottom: 1px solid @gray2;
+    >div{
+      float: left;
+    }
+  }
+  .zm-choiceFile-progressBar{
+
+    >div{
+      width: 60px;
+      height: 60px;
+      background-color: @baseOpa2;
+      border-radius: 2px;
+      position: relative;
+    }
+  }
+  .zm-choiceFile-num {
+    width: 32px;
+    height: 32px;
+    background-color: #d6e7f7;
+    border-radius: 32px;
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    text-align: center;
+    line-height: 32px;
+    z-index: 100
+  }
+  .zm-choiceFile-pr1{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 44px;
+    height: 44px;
+    transform: rotate(0deg);
+    clip: rect(0px,22px,44px,0px);
+    border-radius: 44px;
+    background-color: #3089d5;
+    z-index: 90;
+  }
+  .zm-choiceFile-pr2{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 44px;
+    height: 44px;
+    transform: rotate(-180deg);
+    clip: rect(0px,22px,44px,0px);
+    border-radius: 44px;
+    background-color: #3089d5;
+    z-index: 92;
+    display: none;
+  }
+  .zm-choiceFile-bg1 {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 44px;
+    height: 44px;
+    transform: rotate(0deg);
+    clip: rect(0px,22px,44px,0px);
+    border-radius: 44px;
+    background-color: #fff;
+    z-index: 91;
+  }
+  .zm-choiceFile-bg2 {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    width: 44px;
+    height: 44px;
+    transform: rotate(-180deg);
+    clip: rect(0px,22px,44px,0px);
+    border-radius: 44px;
+    background-color: #fff;
+    z-index: 90;
+  }
+  .zm-choiceFile-explain {
+    margin-left: 5px;
+    width: 272px;
+  }
+  .zm-choiceFile-progressDel{
+    margin-left: 5px;
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .zm-choiceFile-uploadingSpeed {
+    margin-bottom: 5px;
+    margin-right: 4px;
+  }
+  .zm-choiceFile-uploadingAgain {
+    font-size: 14px;
+    svg {
+      position: relative;
+      left: -2px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      fill:@gray1;
+    }
+  }
+  .zm-choiceFile-uploadingStop {
+    font-size: 14px;
+    margin-left: 18px;
+    float: right;
+    svg{
+      position: relative;
+      left: 2px;
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      fill:@fontColor;
+    }
+  }
+}
+.zm-choiceFile-uploadingStopAll {
+  width: 83px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 2px;
+  margin-top: 15px;
+  margin-left: 400px;
+  color: @fontColor;
+  background-color: @white;
+  border:1px solid @baseColor;
+}
+.zm-choiceFile-uploadingStopAllHover{
+  color: @white;
+  background-color: @baseColor;
+}
+.zm-choiceComposer-link{
+  margin-top: 8px;
+}
+.zm-choiceComposer-linkSvg{
+  position: relative;
+  top: 4px;
+  left: -1px;
+  svg{
+    fill:@baseColor;
+    width: 20px;
+    height: 20px;
+  }
+}
+//zmDialog弹窗样式begin
+.zm-dialog-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: default;
+  background-color: @blackOpa1;
+  z-index: 1;
+}
+
+.zm-dialog-box {
+  width: 296px;
+  height: 730px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+  color: @fontColor;
+  z-index: 1000;
+  .zm-dialog {
+    position: relative;
+    font-size: 14px;
+    z-index: 2;
+    border-radius: 10px;
+    background-color: @white;
+    .zm-dialog-header {
+      width: 100%;
+      height: 50px;
+      font-weight: bold;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 50px;
+      background: @baseColor;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      user-select: none;
+      .zm-dialog-title {
+        display: inline-block;
+        height: 40px;
+        max-width: 170px;
+        float: left;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+      }
+      .zm-dialog-header-btn {
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        float: right;
+        cursor: pointer;
+        margin: 12px 0 0 10px;
+        background-color: @whiteOpa5;
+        border-radius: 50%;
+        padding: 5px;
+        position: relative;
+
+        svg {
+          width: 15px;
+          height: 15px;
+          fill: #fff;
+          position: absolute;
+          top: 5px;
+          left: 5px;
+        }
+      }
+      .zm-dialog-header-btn:hover {
+        background-color: @whiteOpa7;
+      }
+    }
+    .zm-dialog-content {
+      overflow: visible;
+      min-height: 100px;
+      cursor: default;
+    }
+    .zm-dialog-footer {
+      height: 60px;
+      overflow: hidden;
+      width: 100%;
+      color: @white;
+      text-align: right;
+      padding: 13px 20px 0 20px;
+    }
+    .zm-dialog-footer > span {
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-left: 30px;
+      width: 100px;
+      text-align: center;
+    }
+  }
+}
+
+.zm-dialog-movable {
+  cursor: move;
+}
+
+.zm-movable-header {
+  cursor: move;
+}
+
+.zm-dialog-btnOK {
+  background: @baseColor;
+}
+
+.zm-dialog-btnOK:hover {
+  background: @baseColorDeep1
+}
+
+.zm-dialog-btnCancel {
+  background: @gray2;
+}
+
+
+.zm-dialog-msgBox {
+  font-size: 16px;
+  margin: 40px 60px 0 40px;
+}
+
+.zm-dialog-msgImg {
+  float: left;
+  margin-right: 30px;
+}
+
+.zm-dialog-msg {
+  text-align: left
+}
+
+.zm-dialog-bg-son {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: @gray2;
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+  z-index: 299;
+}
+
+.zm-dialog-box-son {
+  position: fixed;
+  z-index: 300;
+  display: none;
+  left: 50%;
+  top: 50%;
+  background: @white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px @gray2;
+}
+
+.zm-dialog-content-confirmMsg {
+  height: 100px;
+  line-height: 100px;
+  font-size: 16px;
+  color: @gray1;
+  text-align: center;
+}
+
+@keyframes zm-dialog-animate-010 {
+  0% {
+    left: 50%;
+    top: 50%;
+  }
+  20% {
+    left: 52%;
+    top: 50%;
+  }
+  40% {
+    left: 48%;
+    top: 50%;
+  }
+  60% {
+    left: 52%;
+    top: 50%;
+  }
+  80% {
+    left: 48%;
+    top: 50%;
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.zm-dialog-animate-010 {
+  display: block;
+  animation: zm-dialog-animate-010 0.3s
+}
+
+@keyframes zm-dialog-animate-001 {
+  0% {
+    left: 50%;
+    top: 0;
+  }
+  50% {
+    left: 50%;
+    top: 30%;
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.zm-dialog-animate-001 {
+  display: block;
+  animation: zm-dialog-animate-001 linear 0.5s
+}
+
+@keyframes zm-dialog-animate-002 {
+  0% {
+    left: 50%;
+    top: 0;
+  }
+  50% {
+    left: 50%;
+    top: 55%;
+  }
+  70% {
+    left: 50%;
+    top: 45%;
+  }
+  90% {
+    left: 50%;
+    top: 52%;
+  }
+  95% {
+    left: 50%;
+    top: 49%;
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.zm-dialog-animate-002 {
+  display: block;
+  animation: zm-dialog-animate-002 0.5s
+}
+
+@keyframes zm-dialog-animate-003 {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.zm-dialog-animate-003 {
+  display: block;
+  animation: zm-dialog-animate-003 0.5s
+}
+
+@keyframes zm-dialog-animate-004 {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  75% {
+    left: 55%;
+    top: 55%
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.zm-dialog-animate-004 {
+  display: block;
+  animation: zm-dialog-animate-004 0.5s
+}
+
+@keyframes zm-dialog-animate-005 {
+  0% {
+    left: 0;
+    top: 0;
+    transform: rotate(0deg)
+  }
+  100% {
+    left: 50%;
+    top: 50%;
+    transform: rotate(360deg)
+  }
+}
+
+.zm-dialog-animate-005 {
+  display: block;
+  animation: zm-dialog-animate-005 0.5s
+}
+
+@keyframes music-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*   popover样式   */
+
+.zm-popover-box {
+  position: fixed;
+  border: 1px solid @gray4;
+  font-size: 12px;
+  right: 20px;
+  top: 430px;
+  z-index: 12;
+  display: none;
+  margin-left: 14px;
+  background: @white;
+  border-radius: 10px;
+  box-shadow: 0 0 8px @gray2;
+
+}
+
+.zm-popover {
+  position: relative;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.zm-popover-position-span {
+  position: absolute;
+  left: -14px;
+  margin-top: -10px;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-right: 15px solid @white;
+  border-bottom: 10px solid transparent;
+}
+
+.zm-popover-position-spanBox {
+  position: absolute;
+  left: -15px;
+  margin-top: -10px;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border-top: 10px solid transparent;
+  border-right: 15px solid @gray3;
+  border-bottom: 10px solid transparent;
+}
+.zm-popover-header {
+  padding: 0 10px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px solid @gray4;
+  background: @white;
+  border-radius: 10px 10px 0 0;
+}
+
+.zm-popover-title {
+  float: left;
+  font-weight: bold;
+}
+
+.zm-popover-close {
+  float: right;
+  cursor: pointer;
+  font-size: 16px;
+  color: @gray2;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.zm-popover-close:hover {
+  font-size: 20px;
+}
+
+.zm-popover-content {
+  padding: 5px 0 0 0;
+  overflow-y: scroll;
+  margin-right: -17px;
+}
+
+.zm-popover-content input {
+  border-radius: 5px;
+  border: 1px solid @gray2;
+  padding: 1px 5px;
+}
+
+.zm-popover-footer {
+  position: absolute;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid @gray4;
+  text-align: center;
+  border-radius: 0 0 8px 8px;
+}
+
+.zm-popover-footer > span {
+  padding: 0 18px;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  cursor: pointer;
+  width: 50%;
+  font-weight: bold;
+}
+
+.zm-popover-footer > span:hover {
+  background: @baseColor;
+  color: @white;
+}
+
+.zm-popover-btnCancel {
+  border-left: 1px solid @gray4;
+}
+
+.zm-edit-component-certain {
+  width: 286px;
+  height: 50px;
+  background: linear-gradient(#fff, #f2f2f2);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 -1px 5px @gray2;
+  position: absolute;
+  left: 5px;
+  bottom: 5px;
+  z-index: 2;
+  span {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    background-color: @baseColor;
+    color: @white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+  span:hover {
+    background-color: @baseColorDeep1;
+  }
+}
+//zmDialog弹窗样式end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

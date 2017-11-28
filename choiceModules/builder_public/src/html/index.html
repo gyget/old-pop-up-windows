@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>族蚂7-1弹窗</title>
+    <style>
+        iframe{
+            position: fixed;
+            left:0;
+            top:0;
+            z-index: 6000;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <p>正在访问public...</p>
+    <p>域名访问：</p>
+    <p>http://public.zuma.com/choiceModules/builder_public/src/html/index.html?type=radio</p>
+    <p>ip访问：</p>
+    <p>http://192.168.0.39:8787/choiceModules/builder_public/src/html/index.html?type=radio</p>
+    <p>访问参数type：</p>
+    <p id="modules">
+        <span onclick="choiceFileModules.choiceModules({modules: 'picture'})">picture</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'radio'})">radio</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'video'})">video</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'album'})">album</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'file'})">file</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'blogger'})">blogger</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'news'})">news</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'service'})">service</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'goods'})">goods</span>、
+        <span onclick="choiceFileModules.choiceModules({modules: 'composer'})">composer</span>
+    </p>
+    <p>访问参数multiple：</p>
+    <p>true：多选、false：单选</p>
+    <script>
+        var choiceFileModules = {
+            choiceModules:function (obj) {
+                window.choiceModulesDataValue = obj;
+                var box = document.getElementsByTagName('body')[0];
+                var frame = document.createElement('iframe');
+                frame.setAttribute('src', '/choiceModules/builder_public/src/html/choiceModules.html');
+                frame.setAttribute('id', 'choiceModules');
+                frame.setAttribute('allowtransparency', 'true');
+                frame.setAttribute('scrolling', 'no');
+                box.appendChild(frame);
+            }
+        };
+        var choicePopUpIndex = function () {
+            var r = window.location.search.substr(1);
+            var obj = getArguments(r);
+            var sendData = {
+                multiple: (typeof obj.multiple === "string") ? ((obj.multiple === 'true') ? 1 : 0) : obj.multiple,
+                modules: obj.type,
+                mData: obj.mData || 1
+            };
+//            console.log(getType('mdata'));
+//            console.log(obj);
+            if(r){
+                choiceFileModules.choiceModules(sendData)
+            }
+        };
+        function getType(type) {
+            var reg = new RegExp("(^|&)"+ type +"=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            return r[2];
+        }
+        function getArguments(r) {
+            var arr = [];
+            var obj = {};
+            r.split('&').forEach(function (v) {
+                arr.push(v.split('='));
+            });
+            arr.forEach(function (v) {
+                obj[v[0]] = v[1];
+            });
+            return JSON.parse(JSON.stringify(obj));
+        }
+        choicePopUpIndex();
+    </script>
+</body>
+</html>
